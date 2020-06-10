@@ -124,8 +124,6 @@ For example:
 
 brew bundle --file=- <<EOF
 brew "Caskroom/cask/dockertoolbox"
-brew "go"
-brew "ngrok"
 brew "watch"
 EOF
 
@@ -153,6 +151,11 @@ if [ -r "$HOME/.rcrc" ]; then
   fancy_echo "Updating dotfiles ..."
   rcup
 fi
+
+fancy_echo "Installing java versions..."
+asdf install java adopt-openjdk-8u252-b09.1
+asdf install java adopt-openjdk-11.0.6+10
+asdf install java adopt-openjdk-12.0.2+10.3
 ```
 
 Write your customizations such that they can be run safely more than once.
