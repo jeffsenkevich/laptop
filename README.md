@@ -123,29 +123,22 @@ For example:
 #!/bin/sh
 
 brew bundle --file=- <<EOF
-brew "Caskroom/cask/dockertoolbox"
+#brew "Caskroom/cask/docker-toolbox"
 brew "watch"
+brew "jq"
+cask "firefox"
+cask "google-chrome"
+brew "exa"
+cask "lastpass"
+cask "jetbrains-toolbox"
+cask "slack"
+cask "pritunl"
+cask "sublime-text"
+cask "visual-studio-code"
 EOF
-
-default_docker_machine() {
-  docker-machine ls | grep -Fq "default"
-}
-
-if ! default_docker_machine; then
-  docker-machine create --driver virtualbox default
-fi
-
-default_docker_machine_running() {
-  default_docker_machine | grep -Fq "Running"
-}
-
-if ! default_docker_machine_running; then
-  docker-machine start default
-fi
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
-brew cask cleanup
 
 if [ -r "$HOME/.rcrc" ]; then
   fancy_echo "Updating dotfiles ..."
@@ -154,8 +147,13 @@ fi
 
 fancy_echo "Installing java versions..."
 asdf install java adopt-openjdk-8u252-b09.1
+asdf global java adopt-openjdk-8u252-b09.1
 asdf install java adopt-openjdk-11.0.6+10
 asdf install java adopt-openjdk-12.0.2+10.3
+
+fancy_echo "Installing terraform versions..."
+asdf install terraform 0.11.14
+asdf install terraform 0.12.26
 ```
 
 Write your customizations such that they can be run safely more than once.
