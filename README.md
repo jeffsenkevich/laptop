@@ -166,6 +166,14 @@ can be used in your `~/.laptop.local`.
 See the [wiki](https://github.com/thoughtbot/laptop/wiki)
 for more customization examples.
 
+Manual Steps
+------------
+
+App Store apps:
+* [Lungo] for preventing your Mac from falling asleep
+
+[Lungo]: https://apps.apple.com/us/app/lungo/id1263070803?mt=12
+
 Contributing
 ------------
 
