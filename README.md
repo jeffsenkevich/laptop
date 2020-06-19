@@ -122,19 +122,47 @@ For example:
 ```sh
 #!/bin/sh
 
-brew bundle --file=- <<EOF
+### Using Docker Desktop for now, so this is not necessary
+#brew bundle --file=- <<EOF
 #brew "Caskroom/cask/docker-toolbox"
-brew "watch"
-brew "jq"
-cask "firefox"
-cask "google-chrome"
+#EOF
+#
+#default_docker_machine() {
+#  docker-machine ls | grep -Fq "default"
+#}
+#
+#if ! default_docker_machine; then
+#  docker-machine create --driver virtualbox default
+#fi
+#
+#default_docker_machine_running() {
+#  default_docker_machine | grep -Fq "Running"
+#}
+#
+#if ! default_docker_machine_running; then
+#  docker-machine start default
+#fi
+
+brew bundle --file=- <<EOF
 brew "exa"
-cask "lastpass"
+brew "jq"
+brew "watch"
+cask "firefox"
+cask "fly"
+cask "google-chrome"
+cask "iterm2"
 cask "jetbrains-toolbox"
-cask "slack"
+cask "kap"
+cask "lastpass"
+cask "microsoft-office"
+cask "muzzle"
 cask "pritunl"
+cask "rectangle"
+cask "scroll-reverser"
+cask "slack"
 cask "sublime-text"
 cask "visual-studio-code"
+cask "zoomus"
 EOF
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
