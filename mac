@@ -150,7 +150,7 @@ add_or_update_asdf_plugin() {
 source "$HOME/.asdf/asdf.sh"
 add_or_update_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
 add_or_update_asdf_plugin "java" "https://github.com/halcyon/asdf-java.git"
-add_or_update_asdf_plugin "terraform" https://github.com/Banno/asdf-hashicorp.git
+add_or_update_asdf_plugin "terraform" "https://github.com/Banno/asdf-hashicorp.git"
 
 install_asdf_language() {
   local language="$1"
